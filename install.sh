@@ -7,3 +7,5 @@ echo "Updatint apt done!"
 echo "Installing FiraCode..."
 sudo apt install fonts-firacode
 echo "Installing FiraCode done!"
+
+curl -sS https://starship.rs/install.sh | sh
