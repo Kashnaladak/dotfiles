@@ -28,6 +28,6 @@ echo "Installing Nord theme extension for vscode"
 code --install-extension arcticicestudio.nord-visual-studio-code
 echo "Done: Installing Nord theme extension for vscode"
 
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 create_symlinks
