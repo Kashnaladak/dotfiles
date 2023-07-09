@@ -32,4 +32,4 @@ curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 create_symlinks
 
-source .zshrc
+source ~/.zshrc
