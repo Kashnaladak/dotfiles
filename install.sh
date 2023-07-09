@@ -31,3 +31,5 @@ echo "Done: Installing Nord theme extension for vscode"
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 create_symlinks
+
+source .zshrc
