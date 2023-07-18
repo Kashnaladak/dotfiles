@@ -1,0 +1,89 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+command_timeout = 250
+
+# [](fg:#FCA17D bg:#86BBD8)\
+# $c\
+# $elixir\
+# $elm\
+# $golang\
+# $gradle\
+# $haskell\
+# $java\
+# $julia\
+# $nodejs\
+# $nim\
+# $rust\
+# $scala\
+# $os\
+# $username\
+# [](fg:#86BBD8 bg:#06969A)\
+# $docker_context\
+# $kubernetes\
+# [](fg:#06969A bg:#33658A)\
+
+format = """
+[  $python$java$golang$nodejs](fg:#88C0D0)\
+\n\
+[](fg:#4C566A bg:#3B4252)\
+$kubernetes\
+[](fg:#4C566A bg:#81A1C1)\
+$time\
+[](fg:#81A1C1 bg:#88C0D0)\
+$directory\
+[](fg:#88C0D0 bg:#D8DEE9)\
+$git_branch\
+$git_status\
+$character\
+"""
+
+#[](fg:#D8DEE9 bg:#2E3440)\
+
+[character]
+success_symbol = '[](fg:#D8DEE9 bg:#A3BE8C)[](fg:#A3BE8C bg:#2E3440)'
+error_symbol = '[](fg:#D8DEE9 bg:#BF616A)[](fg:#BF616A bg:#2E3440)'
+
+[directory]
+style = "bg:#88C0D0 fg:#2E3440"
+read_only_style = "bg:#88C0D0 fg:#BF616A"
+format = '[ $path]($style)[$read_only ]($read_only_style)'
+truncate_to_repo = false
+
+[java]
+format = ' [${symbol}(${version} )]($style)'
+style = "fg:#BF616A"
+
+[git_branch]
+format = '[ $symbol$branch(:$remote_branch) ]($style)'
+style = "bg:#D8DEE9 fg:#2E3440"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+style = "bg:#D8DEE9 fg:#4C566A"
+
+[golang]
+format = ' [$symbol($version )]($style)'
+style = "fg:#D08770"
+
+[kubernetes]
+disabled = false
+format = '[$symbol](bg:#4C566A fg:#88C0D0)[$context( \($namespace\)) ]($style)'
+style = "bg:#4C566A fg:#ECEFF4"
+
+[python]
+format = ' [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "green"
+
+[time]
+disabled = false
+style = "bg:#81A1C1 fg:#2E3440"
+format = '[ $time ]($style)'
+time_format = '%d/%m/%y %T'
+
+[username]
+disabled = false
+show_always = true
