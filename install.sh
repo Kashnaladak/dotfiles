@@ -14,6 +14,9 @@ create_symlinks() {
         rm -rf ~/$name
         ln -s $script_dir/$name ~/$name
     done
+
+    mkdir -p ~/.config
+    ln -s $script_dir/starship.toml ~/.config/starship.toml
 }
 
 echo "Updating apt..."
