@@ -1,0 +1,90 @@
+{
+  "boot-java.rewrite.reconcile": true,
+  "editor.fontLigatures": true,
+  "files.autoSaveDelay": 250,
+  "git.autofetch": true,
+  "githubPullRequests.pushBranch": "always",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "workbench.colorTheme": "Nord",
+  "workbench.tree.indent": 16,
+  "editor.fontFamily": "'Berkeley Mono Regular',Menlo, Monaco,'Courier New', monospace",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.autoReveal": true,
+  "[terraform]": {
+    "editor.formatOnSave": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.codeActionsOnSave": ["go.vetOnSave", "go.lintOnSave"],
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.rulers": [80, 100],
+  "editor.tabSize": 4,
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "afterDelay",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "gitlens.gitCommands.closeOnFocusOut": true,
+  "go.formatTool": "goimports",
+  "go.coverOnTestPackage": true,
+  "go.generateTestsFlags": ["-v"],
+  "go.lintTool": "golangci-lint",
+  "go.toolsManagement.autoUpdate": true,
+  "go.useLanguageServer": true,
+  "redhat.telemetry.enabled": true,
+  "rewrap.autoWrap.enabled": false,
+  "rewrap.wrappingColumn": 100,
+  "terminal.integrated.fontSize": 14,
+  "terraform-ls.experimentalFeatures": {
+    "validateOnSave": true
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  "yaml.schemas": {},
+  "security.workspace.trust.untrustedFiles": "open",
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.minimap.enabled": false,
+  "workbench.colorCustomizations": {
+    "[Nord]": {
+      "editorGroup.border": "#4C566A"
+    }
+  },
+  "workbench.editor.showTabs": "none",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "vs-kubernetes": {
+    "vs-kubernetes.crd-code-completion": "disabled"
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "gopls": {
+    "ui.semanticTokens": true
+  },
+  "editor.accessibilitySupport": "off"{{ if eq .profile "work" }},
+  "go.toolsEnvVars": {
+    "CGO_CXXFLAGS_ALLOW": "-lpthread|-ltcmalloc",
+    "CGO_CFLAGS_ALLOW": "-ltcmalloc",
+    "CGO_CFLAGS": "-I/usr/local/opt/openssl/include"
+  },
+  "go.lintFlags": [
+    "--fast",
+    "--build-tags",
+    "postgres_testing,local_testing,runbook,e2e"
+  ],
+  "go.testFlags": [
+    "-v",
+    "-timeout",
+    "30s",
+    "-tags",
+    "cli,postgres_testing,local_testing,runbook,e2e,dynamic"
+  ],
+  "datadog.telemetry.setup.enableTelemetry": "enabled",
+  "datadog.staticAnalysis.notification.suppressOnboarding": true{{ end }}
+}
