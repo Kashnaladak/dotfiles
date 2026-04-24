@@ -10,6 +10,7 @@ brew "make"
 brew "pipx"
 brew "wget"
 brew "git-crypt"
+brew "jq"
 
 # Casks
 cask "karabiner-elements"
