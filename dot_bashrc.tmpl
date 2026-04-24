@@ -1,0 +1,4 @@
+. "$HOME/.cargo/env"
+{{ if eq .profile "work" -}}
+[ -f "$HOME/.yarn/switch/env" ] && source "$HOME/.yarn/switch/env"
+{{ end -}}

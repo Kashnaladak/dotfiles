@@ -1,0 +1,36 @@
+# Path to oh-my-zsh installation
+export ZSH="$HOME/.oh-my-zsh"
+
+# Starship handles the prompt — disable OMZ themes
+ZSH_THEME=""
+
+# Plugins (kubectl lazy-loaded in work profile, kube-ps1 replaced by Starship)
+plugins=(
+ git
+ aliases
+ zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# Volta (Node.js version manager)
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Rust toolchain
+. "$HOME/.cargo/env"
+
+# zsh-syntax-highlighting
+source "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# pipx
+export PATH="$PATH:$HOME/.local/bin"
+
+# File descriptor limit
+ulimit -n 10240
+
+# Starship prompt
+eval "$(starship init zsh)"
+
+# Profile-specific config (work or personal)
+[[ -f ~/.dotprofile/zshrc ]] && source ~/.dotprofile/zshrc

@@ -1,0 +1,95 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+command_timeout = 500
+
+# [](fg:#FCA17D bg:#86BBD8)\
+# $c\
+# $elixir\
+# $elm\
+# $golang\
+# $gradle\
+# $haskell\
+# $java\
+# $julia\
+# $nodejs\
+# $nim\
+# $rust\
+# $scala\
+# $os\
+# $username\
+# [](fg:#86BBD8 bg:#06969A)\
+# $docker_context\
+# $kubernetes\
+# [](fg:#06969A bg:#33658A)\
+
+format = """
+[  $python$java$golang$nodejs](fg:#88C0D0)$kubernetes\
+\n\
+[](fg:#4C566A bg:#3B4252)\
+[](fg:#4C566A bg:#5e81ac)\
+$time\
+[](fg:#5e81ac bg:#88C0D0)\
+$directory\
+[](fg:#88C0D0 bg:#D8DEE9)\
+$git_branch\
+$git_status\
+$character\
+"""
+
+#[](fg:#D8DEE9 bg:#2E3440)\
+
+[character]
+success_symbol = '[](fg:#D8DEE9 bg:#A3BE8C)[](fg:#A3BE8C bg:#2E3440)'
+error_symbol = '[](fg:#D8DEE9 bg:#BF616A)[](fg:#BF616A bg:#2E3440)'
+
+[directory]
+style = "bg:#88C0D0 fg:#2E3440"
+read_only_style = "bg:#88C0D0 fg:#BF616A"
+format = '[ $path]($style)[$read_only ]($read_only_style)'
+truncate_to_repo = true
+truncation_symbol = '..'
+fish_style_pwd_dir_length = 1
+
+[java]
+format = ' [${symbol}(${version} )]($style)'
+style = "fg:#BF616A"
+
+[git_branch]
+format = '[ $symbol$branch(:$remote_branch) ]($style)'
+style = "bg:#D8DEE9 fg:#2E3440"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+style = "bg:#D8DEE9 fg:#4C566A"
+
+[golang]
+format = ' [$symbol($version )]($style)'
+style = "fg:#D08770"
+
+[kubernetes]
+disabled = false
+detect_env_vars = ["K8S_CONTEXT_ENABLED"]
+format = '[ $symbol$context( \($namespace\))]($style)'
+style = "fg:#88C0D0"
+
+[nodejs]
+format = ' [$symbol($version )]($style)'
+style = "green"
+
+[python]
+format = ' [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "green"
+
+[time]
+disabled = false
+style = "bg:#5e81ac fg:#eceff4"
+format = '[ $time ]($style)'
+time_format = '%d/%m/%y %H:%M'
+
+[username]
+disabled = false
+show_always = true

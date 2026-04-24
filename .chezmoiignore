@@ -1,0 +1,9 @@
+README.md
+LICENSE
+Brewfile
+.dotprofile/.git
+install.sh
+claude/
+aliases.zsh
+exports.zsh
+vscode-extensions.txt

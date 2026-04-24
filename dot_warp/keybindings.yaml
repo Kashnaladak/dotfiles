@@ -1,0 +1,7 @@
+---
+"workspace:activate_prev_tab": alt-cmd-left
+"workspace:activate_next_tab": alt-cmd-right
+"pane_group:navigate_right": alt-shift-cmd-L
+"pane_group:navigate_left": alt-shift-cmd-J
+"pane_group:navigate_down": alt-shift-cmd-K
+"pane_group:navigate_up": alt-shift-cmd-I

@@ -1,0 +1,3 @@
+font-family = "BerkeleyMono Nerd Font Mono"
+font-size = 13
+keybind = cmd+r=clear_screen

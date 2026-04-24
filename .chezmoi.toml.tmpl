@@ -1,0 +1,6 @@
+{{- $profile := promptChoiceOnce . "profile" "Machine profile" (list "personal" "work") -}}
+{{- $name := promptStringOnce . "name" "Full name" -}}
+
+[data]
+    profile = {{ $profile | quote }}
+    name = {{ $name | quote }}

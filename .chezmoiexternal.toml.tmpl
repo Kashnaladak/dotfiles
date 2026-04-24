@@ -1,0 +1,15 @@
+{{ if eq .profile "personal" -}}
+[".dotprofile"]
+    type = "git-repo"
+    url = "git@github.com:Kashnaladak/dotfiles-personal.git"
+    refreshPeriod = "168h"
+    [".dotprofile".pull]
+        args = ["--ff-only"]
+{{ else if eq .profile "work" -}}
+[".dotprofile"]
+    type = "git-repo"
+    url = "git@github.com:DataDog/fpaulo-dotfiles.git"
+    refreshPeriod = "168h"
+    [".dotprofile".pull]
+        args = ["--ff-only"]
+{{ end -}}
